@@ -18,7 +18,11 @@ function UpdateArticlePage() {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
 
-      body: JSON.stringify({ title: oldTitle, content: oldContent }),
+      body: JSON.stringify({
+        title: oldTitle,
+        content: oldContent,
+        userId: JSON.parse(localStorage.getItem('user')).id
+      }),
     })
       .then(response => {
         if (response.ok) {

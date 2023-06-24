@@ -48,7 +48,7 @@ exports.createPage = async (req, res) => {
 
 exports.updatePage = async (req, res) => {
   const oldTitle = req.params.title
-  const {title, content} = req.body;
+  const {title, content, userId} = req.body;
   const token = req.headers.authorization.split(' ')[1];
 
   // Проверяем наличие токена
